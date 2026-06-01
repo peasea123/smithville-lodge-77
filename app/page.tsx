@@ -7,6 +7,7 @@ import { ContentSection } from "@/components/sections/ContentSection";
 import { PhotoGallery } from "@/components/gallery/PhotoGallery";
 import { homeValues, homeSections } from "@/content/home";
 import { galleryItems } from "@/content/gallery";
+import { images } from "@/lib/images";
 
 export default function HomePage() {
   return (
@@ -14,7 +15,7 @@ export default function HomePage() {
       <Hero
         headline="Brotherhood. Service. Character."
         subheadline="Smithville Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community."
-        imageSrc="/images/hero-home.svg"
+        imageSrc={images.hero.home}
         imageAlt="Smithville Lodge No. 77 — fraternity and community service in Tennessee"
         primaryCta={{ label: "Learn About Freemasonry", href: "/freemasonry" }}
         secondaryCta={{ label: "Ask About Membership", href: "/membership" }}
@@ -93,7 +94,7 @@ export default function HomePage() {
       <ContentSection>
         <SectionHeading
           title="Life at the Lodge"
-          subtitle="Replace these placeholders with real photos when available."
+          subtitle="Brotherhood, service, and life together in Smithville."
           centered
         />
         <div className="mt-12">

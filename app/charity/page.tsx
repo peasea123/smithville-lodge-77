@@ -4,6 +4,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { charityCards } from "@/content/charity";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Charity & Community",
@@ -17,7 +18,7 @@ export default function CharityPage() {
       <PageHero
         title="Charity & Community"
         subtitle="Practical service to neighbors — the heart of Masonic relief."
-        imageSrc="/images/charity-local.svg"
+        imageSrc={images.hero.charity}
         imageAlt="Charity and community service in Smithville"
       />
 
@@ -31,7 +32,7 @@ export default function CharityPage() {
           <p className="mt-8 leading-relaxed text-stone">
             Specific partnerships and dollar amounts may be listed here when the
             lodge approves public details. The cards below describe the kinds of work
-            we pursue; images are placeholders for future photos of real projects.
+            we pursue. Additional program photos will be added as they become available.
           </p>
         </div>
       </ContentSection>

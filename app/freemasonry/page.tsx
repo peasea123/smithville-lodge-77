@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "What Is Freemasonry?",
@@ -49,7 +50,7 @@ export default function FreemasonryPage() {
       <PageHero
         title="What Is Freemasonry?"
         subtitle="Plain-language answers for neighbors, friends, and men who are curious."
-        imageSrc="/images/freemasonry.svg"
+        imageSrc={images.hero.freemasonry}
         imageAlt="Freemasonry — education and fraternity"
       />
 

@@ -5,6 +5,7 @@ import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { siteConfig } from "@/lib/site";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contact & Visit",
@@ -20,8 +21,8 @@ export default function ContactPage() {
       <PageHero
         title="Contact & Visit"
         subtitle="We welcome respectful inquiries. Please confirm meeting times before visiting."
-        imageSrc="/images/contact-map.svg"
-        imageAlt="Contact Smithville Lodge — map placeholder"
+        imageSrc={images.hero.contact}
+        imageAlt="Smithville, Tennessee — lodge location area"
       />
 
       <ContentSection>
@@ -95,8 +96,8 @@ export default function ContactPage() {
         />
         <div className="relative mx-auto mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm border border-ivory-dark">
           <Image
-            src="/images/contact-map.svg"
-            alt="Map placeholder — replace with embedded map when address is confirmed"
+            src={images.hero.contact}
+            alt="Aerial view of Smithville area — replace with embedded map when address is confirmed"
             fill
             className="object-cover"
             sizes="(max-width: 896px) 100vw, 896px"

@@ -3,6 +3,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Membership",
@@ -39,7 +40,7 @@ export default function MembershipPage() {
       <PageHero
         title="Membership"
         subtitle="A man becomes a Mason because he asks — never because he is recruited."
-        imageSrc="/images/membership.svg"
+        imageSrc={images.hero.membership}
         imageAlt="Membership inquiry — Smithville Lodge"
       />
 

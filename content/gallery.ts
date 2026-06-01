@@ -6,33 +6,33 @@ export type GalleryItem = {
 
 export const galleryItems: GalleryItem[] = [
   {
-    src: "/images/gallery-lodge-exterior.svg",
-    alt: "Placeholder: lodge building exterior",
-    caption: "Lodge exterior — replace with lodge photo",
+    src: "/images/about-lodge.png",
+    alt: "Lodge building exterior in Smithville, Tennessee",
+    caption: "Our lodge in the community",
   },
   {
-    src: "/images/gallery-dining.svg",
-    alt: "Placeholder: fellowship dinner",
-    caption: "Fellowship meal — replace with event photo",
+    src: "/images/fellowship.png",
+    alt: "Fellowship dinner among brothers",
+    caption: "Fellowship and shared meals",
   },
   {
-    src: "/images/gallery-service.svg",
-    alt: "Placeholder: community service project",
-    caption: "Community service — replace with project photo",
+    src: "/images/charity-local.png",
+    alt: "Community charity and local service",
+    caption: "Serving Smithville and DeKalb County",
   },
   {
-    src: "/images/gallery-meeting.svg",
-    alt: "Placeholder: lodge room (non-ceremonial)",
-    caption: "Lodge room — replace when appropriate",
+    src: "/images/learning_growth.png",
+    alt: "Learning, reflection, and moral growth",
+    caption: "Growth through reflection and instruction",
   },
   {
-    src: "/images/gallery-charity.svg",
-    alt: "Placeholder: charity event",
-    caption: "Charity event — replace with real image",
+    src: "/images/gallery-charity.png",
+    alt: "Charity event and community outreach",
+    caption: "Charity in action",
   },
   {
-    src: "/images/gallery-brothers.svg",
-    alt: "Placeholder: brothers at community event",
-    caption: "Community event — replace with photo",
+    src: "/images/membership.png",
+    alt: "Brothers in conversation about membership",
+    caption: "Brotherhood in the community",
   },
 ];

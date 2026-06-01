@@ -4,6 +4,7 @@ import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { FaqAccordion } from "@/components/faq/FaqAccordion";
 import { faqItems } from "@/content/faq";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -17,7 +18,7 @@ export default function FaqPage() {
       <PageHero
         title="Frequently Asked Questions"
         subtitle="Honest answers to common questions about Freemasonry and our lodge."
-        imageSrc="/images/hero-home.svg"
+        imageSrc={images.hero.faq}
         imageAlt="FAQ — Smithville Lodge"
       />
 

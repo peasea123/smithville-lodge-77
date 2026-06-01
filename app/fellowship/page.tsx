@@ -4,6 +4,7 @@ import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { PhotoGallery } from "@/components/gallery/PhotoGallery";
 import { galleryItems } from "@/content/gallery";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Fellowship & Brotherhood",
@@ -40,7 +41,7 @@ export default function FellowshipPage() {
       <PageHero
         title="Fellowship & Brotherhood"
         subtitle="More than meetings — a community of men who know and support one another."
-        imageSrc="/images/fellowship.svg"
+        imageSrc={images.hero.fellowship}
         imageAlt="Fellowship and brotherhood at the lodge"
       />
 
@@ -76,11 +77,15 @@ export default function FellowshipPage() {
       <ContentSection>
         <SectionHeading
           title="Moments together"
-          subtitle="Placeholder gallery — add photos of dinners, events, and community gatherings."
+          subtitle="Fellowship, conversation, and shared life as brothers."
           centered
         />
         <div className="mt-12">
-          <PhotoGallery items={galleryItems.filter((g) => g.src.includes("dining") || g.src.includes("brothers") || g.src.includes("meeting"))} />
+          <PhotoGallery
+            items={galleryItems.filter((g) =>
+              ["/images/fellowship.png", "/images/membership.png", "/images/learning_growth.png"].includes(g.src)
+            )}
+          />
         </div>
       </ContentSection>
     </>

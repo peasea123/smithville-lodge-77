@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { LightRays } from "@/components/layout/MasonicAccent";
+import { images } from "@/lib/images";
 
 type HeroProps = {
   headline: string;
@@ -15,7 +16,7 @@ type HeroProps = {
 export function Hero({
   headline,
   subheadline,
-  imageSrc = "/images/hero-home.svg",
+  imageSrc = images.hero.home,
   imageAlt = "Smithville Lodge — welcoming Masonic fraternity in Tennessee",
   primaryCta,
   secondaryCta,

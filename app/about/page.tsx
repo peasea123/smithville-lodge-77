@@ -4,6 +4,7 @@ import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { PhotoGallery } from "@/components/gallery/PhotoGallery";
 import { galleryItems } from "@/content/gallery";
+import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "About the Lodge",
@@ -39,8 +40,8 @@ export default function AboutPage() {
       <PageHero
         title="About the Lodge"
         subtitle="A local fraternity of men committed to character, charity, and service in Smithville."
-        imageSrc="/images/about-lodge.svg"
-        imageAlt="Smithville Lodge building — placeholder image"
+        imageSrc={images.hero.about}
+        imageAlt="Smithville Lodge building in Smithville, Tennessee"
       />
 
       <ContentSection>
@@ -112,7 +113,7 @@ export default function AboutPage() {
       </ContentSection>
 
       <ContentSection variant="alt">
-        <SectionHeading title="Gallery" subtitle="Placeholder images — replace with lodge photos." centered />
+        <SectionHeading title="Gallery" subtitle="Life at the lodge and in the community." centered />
         <div className="mt-12">
           <PhotoGallery items={galleryItems.slice(0, 3)} />
         </div>

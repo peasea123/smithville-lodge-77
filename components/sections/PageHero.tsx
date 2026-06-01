@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { images } from "@/lib/images";
 
 type PageHeroProps = {
   title: string;
@@ -11,7 +12,7 @@ type PageHeroProps = {
 export function PageHero({
   title,
   subtitle,
-  imageSrc = "/images/hero-home.svg",
+  imageSrc = images.hero.home,
   imageAlt = "Smithville Lodge",
 }: PageHeroProps) {
   return (

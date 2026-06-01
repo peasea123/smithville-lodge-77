@@ -10,7 +10,7 @@ export const charityCards: CharityCard[] = [
     title: "Local Charity",
     description:
       "We partner with trusted local organizations to meet real needs in Smithville and DeKalb County — focused, accountable, and close to home.",
-    image: "/images/charity-local.svg",
+    image: "/images/charity-local.png",
     imageAlt: "Placeholder: local charity and community support",
   },
   {
@@ -24,8 +24,8 @@ export const charityCards: CharityCard[] = [
     title: "Youth & Education",
     description:
       "Supporting young people through scholarships, school supplies, and programs that encourage learning and character.",
-    image: "/images/charity-youth.svg",
-    imageAlt: "Placeholder: youth and education programs",
+    image: "/images/learning_growth.png",
+    imageAlt: "Youth and education support in the community",
   },
   {
     title: "Families in Need",
