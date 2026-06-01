@@ -67,7 +67,7 @@ export function Footer() {
         <div className="mt-10 border-t border-ivory/10 pt-8 text-center text-xs text-ivory/50">
           <p>
             © {year} {siteConfig.name}. Content on this site is for public
-            information. Placeholder contact details — update before launch.
+            information.
           </p>
           <p className="mt-2">
             Freemasonry is a fraternity, not a religion. This site does not

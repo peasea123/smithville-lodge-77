@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { siteConfig } from "@/lib/site";
+import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
+import { googleMapsSearchUrl, siteConfig } from "@/lib/site";
 import { images } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contact & Visit",
   description:
-    "Contact Smithville Lodge No. 77 — address, meeting times, and inquiry form.",
+    "Contact Smithville Lodge No. 77 at 101 W Market, Smithville, TN. Stated meetings first Monday of each month at 7:00 PM.",
 };
 
 export default function ContactPage() {
   const { contact } = siteConfig;
+  const directionsUrl = googleMapsSearchUrl();
 
   return (
     <>
       <PageHero
         title="Contact & Visit"
-        subtitle="We welcome respectful inquiries. Please confirm meeting times before visiting."
+        subtitle="101 W Market, Smithville — stated meetings first Monday of each month at 7:00 PM."
         imageSrc={images.hero.contact}
-        imageAlt="Smithville, Tennessee — lodge location area"
+        imageAlt="Smithville, Tennessee — lodge location"
       />
 
       <ContentSection>
@@ -35,9 +36,16 @@ export default function ContactPage() {
                   Address
                 </dt>
                 <dd className="mt-2 text-stone">
-                  {contact.address}
-                  <br />
-                  {contact.city}
+                  <a
+                    href={directionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-navy underline decoration-gold/50 hover:decoration-gold"
+                  >
+                    {contact.address}
+                    <br />
+                    {contact.city}
+                  </a>
                 </dd>
               </div>
               <div>
@@ -90,18 +98,12 @@ export default function ContactPage() {
 
       <ContentSection variant="alt">
         <SectionHeading
-          title="Map"
-          subtitle="Embed a Google Map or similar when the lodge address is finalized."
+          title="Find us"
+          subtitle="Smithville Lodge No. 77 on West Market Street"
           centered
         />
-        <div className="relative mx-auto mt-10 aspect-[16/9] max-w-4xl overflow-hidden rounded-sm border border-ivory-dark">
-          <Image
-            src={images.hero.contact}
-            alt="Aerial view of Smithville area — replace with embedded map when address is confirmed"
-            fill
-            className="object-cover"
-            sizes="(max-width: 896px) 100vw, 896px"
-          />
+        <div className="mx-auto mt-10 max-w-4xl">
+          <GoogleMapEmbed />
         </div>
       </ContentSection>
     </>

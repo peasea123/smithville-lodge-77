@@ -5,14 +5,15 @@ export const siteConfig = {
   location: "Smithville, Tennessee",
   description:
     "Smithville Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community.",
-  url: "https://smithvillelodge77.org", // placeholder — update when domain is live
+  url: "https://smithville-lodge-77.vercel.app",
   contact: {
-    address: "[Lodge street address — placeholder]",
-    city: "Smithville, TN [ZIP — placeholder]",
+    address: "101 W Market",
+    city: "Smithville, TN 37166",
+    fullAddress: "101 W Market, Smithville, TN 37166",
     email: "[lodge-email@example.com — placeholder]",
     phone: "[(000) 000-0000 — placeholder]",
     meetingSchedule:
-      "Stated meetings: [e.g., first Thursday, 7:00 PM — placeholder]. Dinner often precedes meeting — confirm with the lodge.",
+      "Stated meetings: first Monday of each month at 7:00 PM. Dinner often precedes the meeting — contact the lodge to confirm.",
   },
   nav: [
     { label: "Home", href: "/" },
@@ -25,3 +26,11 @@ export const siteConfig = {
     { label: "Contact", href: "/contact" },
   ],
 } as const;
+
+export function googleMapsSearchUrl(query = siteConfig.contact.fullAddress) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+export function googleMapsEmbedUrl(query = siteConfig.contact.fullAddress) {
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+}

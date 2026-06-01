@@ -1,3 +1,5 @@
+import { images } from "@/lib/images";
+
 export type GalleryItem = {
   src: string;
   alt: string;
@@ -11,7 +13,7 @@ export const galleryItems: GalleryItem[] = [
     caption: "Our lodge in the community",
   },
   {
-    src: "/images/fellowship.png",
+    src: images.gallery.dining,
     alt: "Fellowship dinner among brothers",
     caption: "Fellowship and shared meals",
   },
@@ -26,7 +28,7 @@ export const galleryItems: GalleryItem[] = [
     caption: "Growth through reflection and instruction",
   },
   {
-    src: "/images/gallery-charity.png",
+    src: images.gallery.charity,
     alt: "Charity event and community outreach",
     caption: "Charity in action",
   },

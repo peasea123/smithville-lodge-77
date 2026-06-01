@@ -83,7 +83,7 @@ export default function FellowshipPage() {
         <div className="mt-12">
           <PhotoGallery
             items={galleryItems.filter((g) =>
-              ["/images/fellowship.png", "/images/membership.png", "/images/learning_growth.png"].includes(g.src)
+              ["/images/gallery-dining.png", "/images/fellowship.png", "/images/membership.png"].includes(g.src)
             )}
           />
         </div>

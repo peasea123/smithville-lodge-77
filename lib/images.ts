@@ -1,6 +1,5 @@
 /**
- * Site image paths. PNG where available; SVG placeholders elsewhere.
- * Update this file as new photos are added to public/images/.
+ * Site image paths. Update as new photos are added to public/images/.
  */
 export const images = {
   hero: {
@@ -12,6 +11,18 @@ export const images = {
     charity: "/images/charity-local.png",
     contact: "/images/contact-map.png",
     faq: "/images/faq_clarity.png",
+  },
+  charity: {
+    local: "/images/charity-local.png",
+    food: "/images/charity-food.png",
+    youth: "/images/charity-youth.png",
+    families: "/images/charity-families.png",
+    service: "/images/charity-service.png",
+    disaster: "/images/charity-disaster.png",
+  },
+  gallery: {
+    dining: "/images/gallery-dining.png",
+    charity: "/images/gallery-charity.png",
   },
   abstractBackground: "/images/abstract_background.png",
 } as const;
