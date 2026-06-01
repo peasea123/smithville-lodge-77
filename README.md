@@ -41,20 +41,24 @@ lib/              # Site config
 public/images/    # Placeholder SVGs — swap for real photos
 ```
 
+## GitHub + Vercel deployment
+
+**First-time setup:** follow **[docs/DEPLOY.md](docs/DEPLOY.md)** — GitHub CLI login, create the remote repo, push, and connect Vercel.
+
+Quick version after `gh auth login`:
+
+```powershell
+gh repo create smithville-lodge-77 --public --source=. --remote=origin --push
+```
+
+Then import the repo at [vercel.com/new](https://vercel.com/new). Pushes to `main` auto-deploy.
+
 ## GitHub workflow
 
 1. Clone the repository and create a branch for your changes.
 2. Edit content or components locally; run `npm run dev` to preview.
 3. Commit and push to GitHub.
 4. Open a pull request for review before merging to the main branch.
-
-## Deploy on Vercel
-
-1. Import this GitHub repository at [vercel.com/new](https://vercel.com/new).
-2. Framework preset: **Next.js** (auto-detected).
-3. Build command: `npm run build` (default).
-4. Output: Next.js default.
-5. Deploy. Future pushes to the connected branch trigger automatic deployments.
 
 Update `lib/site.ts` → `url` with your production domain when live.
 
