@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy: #1a2744;
+  --navy-light: #2d3f5c;
+  --gold: #c9a227;
+  --gold-light: #e0bc5a;
+  --ivory: #f8f5f0;
+  --ivory-dark: #ebe6dc;
+  --charcoal: #2d2d2d;
+  --stone: #8a8580;
+  --wood: #6b4423;
+  --background: var(--ivory);
+  --foreground: var(--charcoal);
 }
 
 @theme inline {
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-ivory: var(--ivory);
+  --color-ivory-dark: var(--ivory-dark);
+  --color-charcoal: var(--charcoal);
+  --color-stone: var(--stone);
+  --color-wood: var(--wood);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+}
+
+/* Subtle tracing-board style background */
+.pattern-geometry {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%231a2744' stroke-opacity='0.06' stroke-width='1'%3E%3Cpath d='M30 0v60M0 30h60'/%3E%3Crect x='15' y='15' width='30' height='30'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.pattern-columns {
+  background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(201, 162, 39, 0.03) 50%,
+      transparent 100%
+    ),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0v80' stroke='%23c9a227' stroke-opacity='0.08' stroke-width='1'/%3E%3C/svg%3E");
 }

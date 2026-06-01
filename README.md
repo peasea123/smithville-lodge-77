@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smithville Lodge No. 77 — Public Website
 
-## Getting Started
+A modern public website for **Smithville Lodge No. 77, Free & Accepted Masons** in Smithville, Tennessee. Built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # serve production build
+npm run lint    # ESLint
+```
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+| What to change | Where |
+|----------------|--------|
+| Lodge name, nav, contact placeholders | `lib/site.ts` |
+| Home page copy & value cards | `content/home.ts` |
+| FAQ | `content/faq.ts` |
+| Charity cards | `content/charity.ts` |
+| Gallery items | `content/gallery.ts` |
+| Page-specific copy | `app/<route>/page.tsx` |
+| Images | Replace files in `public/images/` (keep filenames or update references) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+app/              # Routes (pages)
+components/       # UI: Header, Footer, Hero, forms, cards, etc.
+content/          # Editable static data (FAQ, charity, gallery)
+lib/              # Site config
+public/images/    # Placeholder SVGs — swap for real photos
+```
+
+## GitHub workflow
+
+1. Clone the repository and create a branch for your changes.
+2. Edit content or components locally; run `npm run dev` to preview.
+3. Commit and push to GitHub.
+4. Open a pull request for review before merging to the main branch.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Import this GitHub repository at [vercel.com/new](https://vercel.com/new).
+2. Framework preset: **Next.js** (auto-detected).
+3. Build command: `npm run build` (default).
+4. Output: Next.js default.
+5. Deploy. Future pushes to the connected branch trigger automatic deployments.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Update `lib/site.ts` → `url` with your production domain when live.
+
+## Before launch checklist
+
+- [ ] Replace placeholder address, email, phone, and meeting schedule in `lib/site.ts`
+- [ ] Replace SVG placeholders in `public/images/` with real lodge photos
+- [ ] Add verified lodge history if desired (currently marked as placeholder on About)
+- [ ] Wire contact form to email (e.g. Resend, Formspree, or server action)
+- [ ] Embed map on Contact page when address is final
+- [ ] Confirm any grand lodge / jurisdictional disclaimer requirements
+
+## License & imagery
+
+Do not add copyrighted Masonic artwork without permission. Placeholder geometry in this repo is original and decorative only.

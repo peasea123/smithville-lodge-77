@@ -1,0 +1,21 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Community event placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a2744"/>
+      <stop offset="100%" stop-color="#3d4f6a"/>
+    </linearGradient>
+    <pattern id="stone" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#2a3548"/>
+      <path d="M0 20h40M20 0v40" stroke="#354258" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#stone)" opacity="0.3"/>
+  <g opacity="0.2" stroke="#c9a227" fill="none" stroke-width="1.5">
+    <rect x="520" y="320" width="160" height="160"/>
+    <line x1="520" y1="480" x2="680" y2="320"/>
+    <line x1="680" y1="480" x2="520" y2="320"/>
+  </g>
+  <text x="600" y="410" text-anchor="middle" fill="#f8f5f0" font-family="Georgia, serif" font-size="32">Community event</text>
+  <text x="600" y="450" text-anchor="middle" fill="#c9a227" font-family="sans-serif" font-size="16">Replace with lodge photo</text>
+</svg>

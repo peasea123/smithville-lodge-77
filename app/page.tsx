@@ -1,65 +1,124 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ValueCard } from "@/components/cards/ValueCard";
+import { Button } from "@/components/ui/Button";
+import { Hero } from "@/components/sections/Hero";
+import { SectionHeading } from "@/components/sections/SectionHeading";
+import { ContentSection } from "@/components/sections/ContentSection";
+import { PhotoGallery } from "@/components/gallery/PhotoGallery";
+import { homeValues, homeSections } from "@/content/home";
+import { galleryItems } from "@/content/gallery";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Hero
+        headline="Brotherhood. Service. Character."
+        subheadline="Smithville Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community."
+        imageSrc="/images/hero-home.svg"
+        imageAlt="Smithville Lodge No. 77 — fraternity and community service in Tennessee"
+        primaryCta={{ label: "Learn About Freemasonry", href: "/freemasonry" }}
+        secondaryCta={{ label: "Ask About Membership", href: "/membership" }}
+      />
+
+      <ContentSection>
+        <SectionHeading
+          title="Our Foundation"
+          subtitle="Three pillars guide how we live as brothers and neighbors."
+          centered
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {homeValues.map((value) => (
+            <ValueCard key={value.title} {...value} />
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </ContentSection>
+
+      <ContentSection variant="alt">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <SectionHeading title={homeSections.rooted.title} />
+            <p className="mt-6 leading-relaxed text-stone">{homeSections.rooted.body}</p>
+            <Link
+              href="/about"
+              className="mt-6 inline-block text-sm font-semibold text-navy underline decoration-gold/60 underline-offset-4 hover:decoration-gold"
+            >
+              About the lodge →
+            </Link>
+          </div>
+          <div className="rounded-sm border border-ivory-dark bg-white p-8 shadow-sm">
+            <blockquote className="font-serif text-xl leading-relaxed text-navy">
+              “We take good men and make them better — better husbands, fathers,
+              sons, friends, neighbors, and citizens.”
+            </blockquote>
+            <p className="mt-4 text-sm text-stone">
+              A traditional aim of Freemasonry, expressed in plain language.
+            </p>
+          </div>
         </div>
-      </main>
-    </div>
+      </ContentSection>
+
+      <ContentSection>
+        <SectionHeading title={homeSections.whatIs.title} centered />
+        <p className="mx-auto mt-6 max-w-3xl text-center leading-relaxed text-stone">
+          {homeSections.whatIs.body}
+        </p>
+        <div className="mt-10 text-center">
+          <Button href="/freemasonry" variant="secondary">
+            What Is Freemasonry?
+          </Button>
+        </div>
+      </ContentSection>
+
+      <ContentSection variant="navy">
+        <SectionHeading
+          title={homeSections.mystery.title}
+          subtitle={homeSections.mystery.body}
+          centered
+          light
+        />
+      </ContentSection>
+
+      <ContentSection variant="alt">
+        <SectionHeading title={homeSections.service.title} centered />
+        <p className="mx-auto mt-6 max-w-3xl text-center leading-relaxed text-stone">
+          {homeSections.service.body}
+        </p>
+        <div className="mt-10 text-center">
+          <Button href="/charity" variant="primary">
+            Charity & Community
+          </Button>
+        </div>
+      </ContentSection>
+
+      <ContentSection>
+        <SectionHeading
+          title="Life at the Lodge"
+          subtitle="Replace these placeholders with real photos when available."
+          centered
+        />
+        <div className="mt-12">
+          <PhotoGallery items={galleryItems} />
+        </div>
+      </ContentSection>
+
+      <ContentSection variant="navy">
+        <div className="text-center">
+          <SectionHeading
+            title={homeSections.cta.title}
+            subtitle={homeSections.cta.body}
+            centered
+            light
+          />
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button href="/membership" variant="primary">
+              Membership
+            </Button>
+            <Button href="/contact" variant="outline">
+              Contact Us
+            </Button>
+          </div>
+        </div>
+      </ContentSection>
+    </>
   );
 }
