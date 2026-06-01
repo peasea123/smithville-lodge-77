@@ -17,6 +17,20 @@ This project is ready to host on **GitHub** (source of truth) and **Vercel** (ho
 
 ### 1. Log in to GitHub CLI (one time)
 
+**If `gh` is not recognized** (common right after install), either **close and reopen** PowerShell / Cursor, or use the project wrapper:
+
+```powershell
+cd c:\Users\pseagraves\dev\github\smithville-lodge-77
+.\scripts\gh.ps1 auth login
+```
+
+Or refresh PATH in the current window, then use `gh` normally:
+
+```powershell
+$env:Path = "C:\Program Files\GitHub CLI;" + $env:Path
+gh auth login
+```
+
 In PowerShell or Terminal:
 
 ```powershell
@@ -121,7 +135,7 @@ Never commit `.env` files (already in `.gitignore`).
 
 | Issue | Fix |
 |-------|-----|
-| `gh: not recognized` | Restart terminal, or refresh PATH after installing GitHub CLI |
+| `gh: not recognized` | Close/reopen terminal, or run `.\scripts\gh.ps1` instead of `gh`, or `$env:Path = "C:\Program Files\GitHub CLI;" + $env:Path` |
 | `gh auth login` needed | Run Part 1 step 1 |
 | Push rejected (remote has commits) | `git pull origin main --rebase` then `git push` |
 | Vercel build fails | Run `npm run build` locally and fix errors first |

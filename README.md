@@ -45,10 +45,10 @@ public/images/    # Placeholder SVGs — swap for real photos
 
 **First-time setup:** follow **[docs/DEPLOY.md](docs/DEPLOY.md)** — GitHub CLI login, create the remote repo, push, and connect Vercel.
 
-Quick version after `gh auth login`:
+Quick version after login (`gh auth login` or `.\scripts\gh.ps1 auth login` if `gh` is not found):
 
 ```powershell
-gh repo create smithville-lodge-77 --public --source=. --remote=origin --push
+.\scripts\push-to-github.ps1
 ```
 
 Then import the repo at [vercel.com/new](https://vercel.com/new). Pushes to `main` auto-deploy.
