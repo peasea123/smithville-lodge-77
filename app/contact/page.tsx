@@ -10,7 +10,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Contact & Visit",
   description:
-    "Contact Smithville Lodge No. 77 at 101 W Market, Smithville, TN. Stated meetings first Monday of each month at 7:00 PM.",
+    "Contact Center Hill Lodge No. 77 at 101 W Market, Smithville, TN. Stated meetings first Monday of each month at 7:00 PM.",
 };
 
 export default function ContactPage() {
@@ -99,7 +99,7 @@ export default function ContactPage() {
       <ContentSection variant="alt">
         <SectionHeading
           title="Find us"
-          subtitle="Smithville Lodge No. 77 on West Market Street"
+          subtitle="Center Hill Lodge No. 77 on West Market Street"
           centered
         />
         <div className="mx-auto mt-10 max-w-4xl">

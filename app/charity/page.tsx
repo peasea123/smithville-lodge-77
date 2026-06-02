@@ -9,7 +9,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Charity & Community",
   description:
-    "How Smithville Lodge No. 77 serves Smithville and DeKalb County through charity, food support, youth, and community service.",
+    "How Center Hill Lodge No. 77 serves Smithville and DeKalb County through charity, food support, youth, and community service.",
 };
 
 export default function CharityPage() {
@@ -26,7 +26,7 @@ export default function CharityPage() {
         <div className="mx-auto max-w-3xl text-center">
           <SectionHeading
             title="Serving Our Neighbors"
-            subtitle="Masons are taught that charity is not optional — it is part of who we are. Smithville Lodge seeks tangible ways to help our community."
+            subtitle="Masons are taught that charity is not optional — it is part of who we are. Center Hill Lodge seeks tangible ways to help our community."
             centered
           />
           <p className="mt-8 leading-relaxed text-stone">

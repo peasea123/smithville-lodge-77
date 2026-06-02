@@ -13,7 +13,7 @@ export function PageHero({
   title,
   subtitle,
   imageSrc = images.hero.home,
-  imageAlt = "Smithville Lodge",
+  imageAlt = "Center Hill Lodge",
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden border-b border-ivory-dark">

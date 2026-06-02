@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "Smithville Lodge No. 77",
-  shortName: "Smithville Lodge 77",
+  name: "Center Hill Lodge No. 77",
+  shortName: "Center Hill Lodge 77",
   tagline: "Free & Accepted Masons",
   location: "Smithville, Tennessee",
   description:
-    "Smithville Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community.",
+    "Center Hill Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community.",
   url: "https://smithville-lodge-77.vercel.app",
   contact: {
     address: "101 W Market",

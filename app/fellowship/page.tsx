@@ -9,7 +9,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Fellowship & Brotherhood",
   description:
-    "Friendship, meals, mentoring, and intergenerational brotherhood at Smithville Lodge No. 77.",
+    "Friendship, meals, mentoring, and intergenerational brotherhood at Center Hill Lodge No. 77.",
 };
 
 const fellowshipPoints = [
@@ -50,7 +50,7 @@ export default function FellowshipPage() {
           <SectionHeading title="A Lodge Is People" />
           <p className="mt-6 leading-relaxed text-stone">
             Freemasonry is often described in terms of symbols and history — but at
-            Smithville Lodge, it is also simply this: good men spending time together,
+            Center Hill Lodge, it is also simply this: good men spending time together,
             learning from one another, and enjoying life as brothers. The lodge room
             matters; so does the dining table, the handshake after a hard week, and
             the phone call when someone is in need.

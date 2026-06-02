@@ -9,7 +9,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About the Lodge",
   description:
-    "Learn about Smithville Lodge No. 77 — values, community service, and our place in Smithville, Tennessee.",
+    "Learn about Center Hill Lodge No. 77 — values, community service, and our place in Smithville, Tennessee.",
 };
 
 const values = [
@@ -41,7 +41,7 @@ export default function AboutPage() {
         title="About the Lodge"
         subtitle="A local fraternity of men committed to character, charity, and service in Smithville."
         imageSrc={images.hero.about}
-        imageAlt="Smithville Lodge building in Smithville, Tennessee"
+        imageAlt="Center Hill Lodge building in Smithville, Tennessee"
       />
 
       <ContentSection>
@@ -49,7 +49,7 @@ export default function AboutPage() {
           <SectionHeading title="Who We Are" />
           <div className="mt-8 space-y-4 leading-relaxed text-stone">
             <p>
-              Smithville Lodge No. 77 is a lodge of Free & Accepted Masons serving
+              Center Hill Lodge No. 77 is a lodge of Free & Accepted Masons serving
               Smithville and DeKalb County, Tennessee. We are neighbors, coworkers,
               veterans, tradesmen, professionals, fathers, and grandfathers — men who
               believe that fellowship and moral growth belong in the life of a community.

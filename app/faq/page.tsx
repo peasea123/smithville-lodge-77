@@ -9,7 +9,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about Freemasonry, faith, politics, privacy, and membership at Smithville Lodge No. 77.",
+    "Frequently asked questions about Freemasonry, faith, politics, privacy, and membership at Center Hill Lodge No. 77.",
 };
 
 export default function FaqPage() {
@@ -19,7 +19,7 @@ export default function FaqPage() {
         title="Frequently Asked Questions"
         subtitle="Honest answers to common questions about Freemasonry and our lodge."
         imageSrc={images.hero.faq}
-        imageAlt="FAQ — Smithville Lodge"
+        imageAlt="FAQ — Center Hill Lodge"
       />
 
       <ContentSection>

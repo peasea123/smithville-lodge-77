@@ -15,7 +15,7 @@ const sections = [
   {
     id: "fraternity",
     title: "A centuries-old fraternity",
-    body: "Modern organized Freemasonry has roots stretching back more than 300 years. It is a voluntary association of men who meet for fellowship, moral instruction, and charitable work. Lodges exist in communities around the world; Smithville Lodge No. 77 is one local expression of that tradition.",
+    body: "Modern organized Freemasonry has roots stretching back more than 300 years. It is a voluntary association of men who meet for fellowship, moral instruction, and charitable work. Lodges exist in communities around the world; Center Hill Lodge No. 77 is one local expression of that tradition.",
   },
   {
     id: "not-religion",
