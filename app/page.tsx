@@ -14,9 +14,9 @@ export default function HomePage() {
     <>
       <Hero
         headline="Brotherhood. Service. Character."
-        subheadline="Smithville Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community."
+        subheadline="Center Hill Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community."
         imageSrc={images.hero.home}
-        imageAlt="Smithville Lodge No. 77 — fraternity and community service in Tennessee"
+        imageAlt="Center Hill Lodge No. 77 — fraternity and community service in Tennessee"
         primaryCta={{ label: "Learn About Freemasonry", href: "/freemasonry" }}
         secondaryCta={{ label: "Ask About Membership", href: "/membership" }}
       />

@@ -22,7 +22,7 @@ export const homeValues = [
 export const homeSections = {
   rooted: {
     title: "A Lodge Rooted in Smithville",
-    body: "Smithville Lodge No. 77 is part of the fabric of DeKalb County — men who live here, work here, worship in their own congregations, and serve alongside neighbors. We are not a distant organization; we are local brothers who care about this community.",
+    body: "Center Hill Lodge No. 77 is part of the fabric of DeKalb County — men who live here, work here, worship in their own congregations, and serve alongside neighbors. We are not a distant organization; we are local brothers who care about this community.",
   },
   whatIs: {
     title: "What Freemasonry Is",

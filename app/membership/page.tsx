@@ -8,7 +8,7 @@ import { images } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Membership",
   description:
-    "How a man may ask about joining Smithville Lodge No. 77 — eligibility, expectations, and respectful inquiry.",
+    "How a man may ask about joining Center Hill Lodge No. 77 — eligibility, expectations, and respectful inquiry.",
 };
 
 const whoCanAsk = [
@@ -41,7 +41,7 @@ export default function MembershipPage() {
         title="Membership"
         subtitle="A man becomes a Mason because he asks — never because he is recruited."
         imageSrc={images.hero.membership}
-        imageAlt="Membership inquiry — Smithville Lodge"
+        imageAlt="Membership inquiry — Center Hill Lodge"
       />
 
       <ContentSection>

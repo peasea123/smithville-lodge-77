@@ -17,7 +17,7 @@ export function Hero({
   headline,
   subheadline,
   imageSrc = images.hero.home,
-  imageAlt = "Smithville Lodge — welcoming Masonic fraternity in Tennessee",
+  imageAlt = "Center Hill Lodge — welcoming Masonic fraternity in Tennessee",
   primaryCta,
   secondaryCta,
 }: HeroProps) {
