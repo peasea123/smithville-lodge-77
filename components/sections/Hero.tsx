@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { LightRays } from "@/components/layout/MasonicAccent";
 import { images } from "@/lib/images";
 
 type HeroProps = {
@@ -32,7 +31,6 @@ export function Hero({
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-navy/75" />
-      <LightRays />
       <Container className="relative z-10 py-24 lg:py-32">
         <div className="max-w-2xl">
           <p className="mb-4 text-sm font-semibold tracking-[0.2em] text-gold uppercase">
