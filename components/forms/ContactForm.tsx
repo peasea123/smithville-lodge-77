@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Script from "next/script";
+import { TurnstileField } from "@/components/forms/TurnstileField";
 
 type ContactFormProps = {
   subject?: string;
@@ -86,13 +86,6 @@ export function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      {captchaConfigured && (
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-          strategy="afterInteractive"
-        />
-      )}
-
       <input type="hidden" name="subject" value={subject} />
       <input
         type="text"
@@ -187,16 +180,14 @@ export function ContactForm({
           <p className="text-sm font-medium text-navy">
             Complete the captcha verification <span className="text-gold">*</span>
           </p>
-          <div
-            className="cf-turnstile mt-2"
-            data-sitekey={captchaSiteKey}
-            data-theme="light"
-          />
+          <div className="mt-2">
+            <TurnstileField siteKey={captchaSiteKey!} />
+          </div>
         </div>
       ) : (
         <p className="text-sm text-red-700" role="alert">
-          Captcha protection is currently unavailable. Please contact the lodge by
-          phone or visit during posted meeting times.
+          The contact form is temporarily unavailable. Please visit the lodge at 101
+          W Market during stated meetings (first Monday of each month, 7:00 PM).
         </p>
       )}
 

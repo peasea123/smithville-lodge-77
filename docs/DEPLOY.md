@@ -119,15 +119,47 @@ vercel --prod
 
 ---
 
-## Environment variables
+## Environment variables (contact form captcha)
 
-No env vars are required for the current static site and contact form UI.
+The contact form requires **Cloudflare Turnstile** keys. Without them, the form shows “temporarily unavailable.”
 
-When you connect the contact form to email (Resend, etc.), add secrets in:
+### 1. Create Turnstile keys
 
-**Vercel** → Project → **Settings** → **Environment Variables**
+1. Sign in at [Cloudflare Dashboard → Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile)
+2. **Add widget** → choose **Managed** (recommended)
+3. **Domains:** add your production host(s), e.g. `smithville-lodge-77.vercel.app` and any custom domain. For local dev, add `localhost`.
+4. Copy the **Site key** and **Secret key**
 
-Never commit `.env` files (already in `.gitignore`).
+### 2. Add to Vercel
+
+**Vercel** → your project → **Settings** → **Environment Variables**
+
+| Name | Value | Environments |
+|------|--------|----------------|
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Site key from Cloudflare | Production, Preview, Development |
+| `TURNSTILE_SECRET_KEY` | Secret key from Cloudflare | Production, Preview, Development |
+
+Important: `NEXT_PUBLIC_*` is embedded at **build time**. After adding or changing these variables, **redeploy** (Deployments → ⋯ → Redeploy, or push a new commit).
+
+### 3. Local development
+
+Copy `.env.example` to `.env.local` and fill in both keys:
+
+```powershell
+copy .env.example .env.local
+# Edit .env.local, then:
+npm run dev
+```
+
+Or via CLI:
+
+```powershell
+npx vercel env pull .env.local
+```
+
+Never commit `.env` or `.env.local` (already in `.gitignore`).
+
+When you add email delivery (Resend, etc.), add those secrets in the same Vercel screen.
 
 ---
 
@@ -140,6 +172,8 @@ Never commit `.env` files (already in `.gitignore`).
 | Push rejected (remote has commits) | `git pull origin main --rebase` then `git push` |
 | Vercel build fails | Run `npm run build` locally and fix errors first |
 | Wrong repo root warning | Ensure you deploy from this folder, not a parent directory with another `package-lock.json` |
+| Contact form: captcha unavailable | Add Turnstile env vars on Vercel and **redeploy** (see Environment variables above) |
+| Captcha widget missing but no error | Confirm domain is allowed in Turnstile widget settings; redeploy after adding `NEXT_PUBLIC_TURNSTILE_SITE_KEY` |
 
 ---
 
