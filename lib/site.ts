@@ -8,6 +8,8 @@ export const siteConfig = {
   url: "https://www.chl77.org",
   /** Production hostnames (for Turnstile, DNS, etc.) */
   domains: ["chl77.org", "www.chl77.org"] as const,
+  /** Resend sending subdomain — verify this domain in Resend, not the apex */
+  emailSendingDomain: "contact.chl77.org",
   contact: {
     address: "101 W Market",
     city: "Smithville, TN 37166",

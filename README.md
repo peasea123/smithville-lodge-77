@@ -28,7 +28,7 @@ NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key
 TURNSTILE_SECRET_KEY=your_turnstile_secret_key
 ```
 
-Contact form email uses **Resend**. See **[docs/RESEND.md](docs/RESEND.md)** for DNS verification on `chl77.org` (required before mail sends).
+Contact form email uses **Resend** on subdomain **`contact.chl77.org`**. See **[docs/RESEND.md](docs/RESEND.md)** for DNS verification.
 
 ## Editing content
 
@@ -78,7 +78,7 @@ Production site: **https://www.chl77.org** (also **https://chl77.org**). Canonic
 - [ ] Replace placeholder address, email, phone, and meeting schedule in `lib/site.ts`
 - [ ] Replace SVG placeholders in `public/images/` with real lodge photos
 - [ ] Add verified lodge history if desired (currently marked as placeholder on About)
-- [ ] Verify Resend DNS for `chl77.org` (see `docs/RESEND.md`)
+- [ ] Verify Resend DNS for `contact.chl77.org` (see `docs/RESEND.md`)
 - [ ] Embed map on Contact page when address is final
 - [ ] Confirm any grand lodge / jurisdictional disclaimer requirements
 

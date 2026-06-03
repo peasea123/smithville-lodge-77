@@ -1,6 +1,8 @@
-# Resend email setup (chl77.org)
+# Resend email setup (contact.chl77.org)
 
-The contact form sends mail through [Resend](https://resend.com) after Turnstile captcha passes. **Vercel environment variables alone are not enough** — you must verify your domain in Resend with DNS records.
+The contact form sends mail through [Resend](https://resend.com) after Turnstile captcha passes.
+
+**Sending subdomain:** `contact.chl77.org` — isolates website/form mail from the main `chl77.org` domain reputation. The public website stays on `www.chl77.org`; only the **From** address uses the subdomain.
 
 ---
 
@@ -9,61 +11,57 @@ The contact form sends mail through [Resend](https://resend.com) after Turnstile
 | Name | Example | Notes |
 |------|---------|--------|
 | `RESEND_API_KEY` | `re_...` | From Resend → API Keys. **Server only** — never `NEXT_PUBLIC_`. |
-| `RESEND_FROM_EMAIL` | `Center Hill Lodge <contact@chl77.org>` | Must use an address on a **verified** domain. |
-| `CONTACT_FORM_TO_EMAIL` | `secretary@chl77.org` | Inbox that receives form submissions (can be any valid email). |
+| `RESEND_FROM_EMAIL` | `Center Hill Lodge <inquiries@contact.chl77.org>` | Must use `@contact.chl77.org` after that subdomain is **Verified** in Resend. |
+| `CONTACT_FORM_TO_EMAIL` | `your-inbox@gmail.com` | Where submissions are delivered (any valid email). |
 
 After adding or changing variables, **redeploy** on Vercel.
 
 ---
 
-## DNS records (required before @chl77.org can send)
+## DNS records (required before mail sends)
 
 1. Log in at [resend.com/domains](https://resend.com/domains)
-2. **Add domain** → `chl77.org` (Resend usually covers both apex and `www` for sending; confirm in their UI)
-3. Resend shows DNS records to add at your **domain registrar** or **DNS host** (wherever `chl77.org` DNS is managed — may be Cloudflare, GoDaddy, etc.)
-
-Typical records (exact names/values come from Resend — copy from their dashboard):
-
-| Type | Purpose |
-|------|---------|
-| **TXT** | SPF / domain verification |
-| **CNAME** (often 3) | DKIM signing |
-| **TXT** (optional) | DMARC — recommended for deliverability |
-
+2. **Add domain** → `contact.chl77.org` (the subdomain only — not the apex)
+3. Resend shows DNS records (TXT for SPF, CNAME for DKIM, optional DMARC). Add them at your DNS host for **`contact.chl77.org`** — same provider where `chl77.org` / Vercel records live.
 4. Click **Verify** in Resend after saving DNS
-5. DNS can take from a few minutes up to **48 hours** to propagate
+5. Propagation can take minutes up to **48 hours**
 
-Until status is **Verified**, sending from `contact@chl77.org` (or any `@chl77.org` address) will **fail**. The contact form may show an error mentioning domain verification.
-
----
-
-## Where to add DNS if Vercel hosts the website
-
-**Website hosting** (Vercel) and **email DNS** (Resend) are separate:
-
-- Vercel → `chl77.org` / `www.chl77.org` for the Next.js site (A/CNAME as Vercel instructs)
-- Resend → TXT/CNAME records for **email authentication** on the same domain
-
-Both sets of records live in your DNS provider. They do not conflict if you add exactly what each service lists.
+Until status is **Verified**, sending from `@contact.chl77.org` will fail. The contact form may show a domain verification error.
 
 ---
 
-## Testing before DNS is verified
+## Website DNS vs email DNS
 
-Resend’s onboarding domain (`onboarding@resend.dev`) can only send to **your own** Resend account email during early testing — not suitable for a public lodge form.
+| Purpose | Host | Where configured |
+|---------|------|------------------|
+| Website | `chl77.org`, `www.chl77.org` | Vercel → Domains |
+| Form email | `contact.chl77.org` | Resend → Domains + DNS records |
 
-**Recommended:** add DNS records, wait for **Verified**, then test the live form at https://www.chl77.org/contact.
+These do not conflict. You are adding records for the **subdomain** `contact`, not moving the website.
+
+---
+
+## Suggested `RESEND_FROM_EMAIL` values
+
+Pick one address on the verified subdomain:
+
+- `Center Hill Lodge <inquiries@contact.chl77.org>` (recommended)
+- `Center Hill Lodge <noreply@contact.chl77.org>`
+
+`CONTACT_FORM_TO_EMAIL` can be any inbox you check (Gmail, lodge officer email, etc.).
 
 ---
 
 ## Checklist
 
-- [ ] Domain `chl77.org` added in Resend
-- [ ] SPF + DKIM (and optional DMARC) DNS records published
-- [ ] Resend shows domain **Verified**
+- [ ] Domain **`contact.chl77.org`** added in Resend (not only apex `chl77.org`)
+- [ ] SPF + DKIM DNS records published for the subdomain
+- [ ] Resend shows **Verified**
 - [ ] `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_FORM_TO_EMAIL` set in Vercel
-- [ ] Redeploy after env vars
-- [ ] Submit test message on Contact page
+- [ ] `RESEND_FROM_EMAIL` uses `@contact.chl77.org`
+- [ ] Redeploy on Vercel
+- [ ] Test submit at https://www.chl77.org/contact
+- [ ] Check Resend → **Logs** if mail does not arrive
 
 ---
 
@@ -71,7 +69,7 @@ Resend’s onboarding domain (`onboarding@resend.dev`) can only send to **your o
 
 | Symptom | Fix |
 |---------|-----|
-| Form succeeds but no email | Check Vercel env vars; redeploy; check Resend → Logs |
-| “Domain verification” error | DNS not verified yet — complete Resend DNS checklist |
-| Emails go to spam | Ensure DKIM verified; add DMARC; use a real `From` like `contact@chl77.org` |
-| `403` / validation error | `RESEND_FROM_EMAIL` must match verified domain |
+| Form error about domain verification | Subdomain DNS not verified yet — finish Resend checklist |
+| Verified apex but still fails | You must verify **`contact.chl77.org`**, not only `chl77.org` |
+| Emails go to spam | Confirm DKIM green in Resend; add DMARC if offered |
+| `403` / validation error | `RESEND_FROM_EMAIL` domain must match verified subdomain exactly |
