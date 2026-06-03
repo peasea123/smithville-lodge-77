@@ -76,9 +76,8 @@ export function ContactForm({
           Thank you for your message
         </p>
         <p className="mt-2 text-sm text-stone">
-          This form is now protected by captcha, but message delivery is still being
-          finalized. Please use the contact details on this page for urgent
-          inquiries.
+          Your message has been sent to the lodge. We will respond when we are
+          able. For urgent matters, visit during stated meeting times.
         </p>
       </div>
     );

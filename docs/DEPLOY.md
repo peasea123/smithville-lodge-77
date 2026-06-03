@@ -161,7 +161,7 @@ npx vercel env pull .env.local
 
 Never commit `.env` or `.env.local` (already in `.gitignore`).
 
-When you add email delivery (Resend, etc.), add those secrets in the same Vercel screen.
+For contact form email, add Resend variables (see **[docs/RESEND.md](RESEND.md)**). DNS for `chl77.org` must be verified in Resend before `@chl77.org` addresses can send.
 
 ---
 

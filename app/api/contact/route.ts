@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendContactEmail } from "@/lib/email";
 
 const TURNSTILE_VERIFY_URL =
   "https://challenges.cloudflare.com/turnstile/v0/siteverify";
@@ -84,6 +85,9 @@ export async function POST(request: NextRequest) {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
+  const subjectField = formData.get("subject");
+  const phone = formData.get("phone");
+  const interest = formData.get("interest");
   const honeypot = formData.get("website");
   const captchaToken = formData.get("cf-turnstile-response");
 
@@ -127,7 +131,29 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Captcha and validation pass here. Delivery/storage integration can be added
-  // later without changing the anti-bot gate in front of this endpoint.
+  const subject =
+    typeof subjectField === "string" && subjectField.trim()
+      ? subjectField.trim()
+      : "General inquiry";
+
+  const emailResult = await sendContactEmail({
+    name: name.trim(),
+    email: email.trim(),
+    message: message.trim(),
+    subject,
+    phone: typeof phone === "string" && phone.trim() ? phone.trim() : undefined,
+    interest:
+      typeof interest === "string" && interest.trim()
+        ? interest.trim()
+        : undefined,
+  });
+
+  if (!emailResult.ok) {
+    return NextResponse.json(
+      { error: emailResult.message },
+      { status: emailResult.pendingDns ? 503 : 502 },
+    );
+  }
+
   return NextResponse.json({ ok: true });
 }

@@ -28,7 +28,7 @@ NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key
 TURNSTILE_SECRET_KEY=your_turnstile_secret_key
 ```
 
-The `/api/contact` endpoint currently validates required fields and captcha tokens only. Add your own email delivery or persistence integration for production message handling.
+Contact form email uses **Resend**. See **[docs/RESEND.md](docs/RESEND.md)** for DNS verification on `chl77.org` (required before mail sends).
 
 ## Editing content
 
@@ -78,7 +78,7 @@ Production site: **https://www.chl77.org** (also **https://chl77.org**). Canonic
 - [ ] Replace placeholder address, email, phone, and meeting schedule in `lib/site.ts`
 - [ ] Replace SVG placeholders in `public/images/` with real lodge photos
 - [ ] Add verified lodge history if desired (currently marked as placeholder on About)
-- [ ] Wire contact form to email (e.g. Resend, Formspree, or server action)
+- [ ] Verify Resend DNS for `chl77.org` (see `docs/RESEND.md`)
 - [ ] Embed map on Contact page when address is final
 - [ ] Confirm any grand lodge / jurisdictional disclaimer requirements
 
