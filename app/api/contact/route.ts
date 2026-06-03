@@ -8,6 +8,16 @@ type TurnstileVerificationResult = {
 };
 
 function getRemoteIp(request: NextRequest) {
+  const cloudflareIp = request.headers.get("cf-connecting-ip")?.trim();
+  if (cloudflareIp) {
+    return cloudflareIp;
+  }
+
+  const realIp = request.headers.get("x-real-ip")?.trim();
+  if (realIp) {
+    return realIp;
+  }
+
   return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
 }
 

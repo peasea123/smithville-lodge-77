@@ -98,8 +98,7 @@ export function ContactForm({
         name="website"
         tabIndex={-1}
         autoComplete="off"
-        className="hidden"
-        aria-hidden="true"
+        className="pointer-events-none absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
       />
 
       <div className="grid gap-5 sm:grid-cols-2">
