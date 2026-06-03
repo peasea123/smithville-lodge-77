@@ -3,7 +3,6 @@ import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/lib/site";
-import { images } from "@/lib/images";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -46,10 +45,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  icons: {
-    icon: [{ url: images.brand.favicon, type: "image/png" }],
-    apple: [{ url: images.brand.favicon, type: "image/png" }],
-  },
+  // Favicon: app/icon.png and app/apple-icon.png (Next.js file convention)
 };
 
 export default function RootLayout({
