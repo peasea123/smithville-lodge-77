@@ -29,19 +29,7 @@ export function Footer() {
               {siteConfig.contact.meetingSchedule}
             </p>
             <p className="mt-4 text-sm text-ivory/70">
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="hover:text-gold-light"
-              >
-                {siteConfig.contact.email}
-              </a>
-              <br />
-              <a
-                href={`tel:${siteConfig.contact.phone.replace(/\D/g, "")}`}
-                className="hover:text-gold-light"
-              >
-                {siteConfig.contact.phone}
-              </a>
+              Please use the contact form for all inquiries.
             </p>
           </div>
 

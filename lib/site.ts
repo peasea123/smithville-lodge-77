@@ -10,8 +10,6 @@ export const siteConfig = {
     address: "101 W Market",
     city: "Smithville, TN 37166",
     fullAddress: "101 W Market, Smithville, TN 37166",
-    email: "[lodge-email@example.com — placeholder]",
-    phone: "[(000) 000-0000 — placeholder]",
     meetingSchedule:
       "Stated meetings: first Monday of each month at 7:00 PM. Dinner often precedes the meeting — contact the lodge to confirm.",
   },
