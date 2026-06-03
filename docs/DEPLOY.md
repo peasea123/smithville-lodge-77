@@ -175,7 +175,9 @@ When you add email delivery (Resend, etc.), add those secrets in the same Vercel
 | Vercel build fails | Run `npm run build` locally and fix errors first |
 | Wrong repo root warning | Ensure you deploy from this folder, not a parent directory with another `package-lock.json` |
 | Contact form: captcha unavailable | Add Turnstile env vars on Vercel and **redeploy** (see Environment variables above) |
+| Captcha: **Unable to connect to website** | Turnstile **hostname list** must include every domain users visit: `chl77.org`, `www.chl77.org`, and `localhost`. Edit the widget in [Cloudflare Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile) — hostnames are **not** inherited from Vercel. After saving, redeploy is optional; hard-refresh the browser. |
 | Captcha widget missing but no error | Confirm domain is allowed in Turnstile widget settings; redeploy after adding `NEXT_PUBLIC_TURNSTILE_SITE_KEY` |
+| Keys added but still broken | Create a **new** Turnstile widget with `chl77.org` + `www.chl77.org`, paste **new** site/secret keys into Vercel, redeploy |
 
 ---
 
