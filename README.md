@@ -19,6 +19,15 @@ npm run start   # serve production build
 npm run lint    # ESLint
 ```
 
+## Captcha configuration (Cloudflare Turnstile)
+
+Set these environment variables before running the contact form in development or production:
+
+```bash
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key
+TURNSTILE_SECRET_KEY=your_turnstile_secret_key
+```
+
 ## Editing content
 
 | What to change | Where |

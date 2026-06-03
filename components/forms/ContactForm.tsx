@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Script from "next/script";
 
 type ContactFormProps = {
   subject?: string;
@@ -12,10 +13,57 @@ export function ContactForm({
   showInterestField = false,
 }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const captchaSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const captchaConfigured = Boolean(captchaSiteKey);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    const form = e.currentTarget;
+
+    if (!captchaConfigured) {
+      setErrorMessage("Captcha is not configured yet. Please try again later.");
+      return;
+    }
+
+    setSubmitting(true);
+    setErrorMessage(null);
+
+    const formData = new FormData(form);
+    const captchaToken = formData.get("cf-turnstile-response");
+    if (typeof captchaToken !== "string" || !captchaToken.trim()) {
+      setSubmitting(false);
+      setErrorMessage("Please complete the captcha verification.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = (await response.json().catch(() => null)) as
+        | { error?: string }
+        | null;
+
+      if (!response.ok) {
+        setErrorMessage(
+          data?.error ?? "We could not submit your message. Please try again.",
+        );
+        return;
+      }
+
+      form.reset();
+      setSubmitted(true);
+    } catch {
+      setErrorMessage(
+        "A network error occurred while submitting your message. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -28,9 +76,8 @@ export function ContactForm({
           Thank you for your message
         </p>
         <p className="mt-2 text-sm text-stone">
-          This form is not yet connected to email. A lodge officer will configure
-          delivery before launch. For now, please use the contact details on this
-          page if you need a prompt response.
+          Your inquiry has been received. A lodge officer will respond when one is
+          available.
         </p>
       </div>
     );
@@ -38,7 +85,22 @@ export function ContactForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {captchaConfigured && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          strategy="afterInteractive"
+        />
+      )}
+
       <input type="hidden" name="subject" value={subject} />
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -120,11 +182,36 @@ export function ContactForm({
         politics are not appropriate topics for initial contact.
       </p>
 
+      {captchaConfigured ? (
+        <div>
+          <p className="text-sm font-medium text-navy">
+            Complete the captcha verification <span className="text-gold">*</span>
+          </p>
+          <div
+            className="cf-turnstile mt-2"
+            data-sitekey={captchaSiteKey}
+            data-theme="light"
+          />
+        </div>
+      ) : (
+        <p className="text-sm text-red-700" role="alert">
+          Captcha protection is currently unavailable. Please contact the lodge by
+          phone or visit during posted meeting times.
+        </p>
+      )}
+
+      {errorMessage && (
+        <p className="text-sm text-red-700" role="alert">
+          {errorMessage}
+        </p>
+      )}
+
       <button
         type="submit"
+        disabled={!captchaConfigured || submitting}
         className="w-full rounded-sm bg-navy px-6 py-3 text-sm font-semibold tracking-wide text-ivory uppercase transition-colors hover:bg-navy-light sm:w-auto"
       >
-        Send message
+        {submitting ? "Sending..." : "Send message"}
       </button>
     </form>
   );
