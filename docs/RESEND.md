@@ -69,7 +69,9 @@ Pick one address on the verified subdomain:
 
 | Symptom | Fix |
 |---------|-----|
-| Form error about domain verification | Subdomain DNS not verified yet — finish Resend checklist |
-| Verified apex but still fails | You must verify **`contact.chl77.org`**, not only `chl77.org` |
+| Resend verified but form still fails | **`RESEND_FROM_EMAIL` must use `@contact.chl77.org`**, not `@chl77.org`. Example: `Center Hill Lodge <inquiries@contact.chl77.org>`. Redeploy after changing Vercel. |
+| “Domain verification” on form (old deploy) | Redeploy latest code; check Vercel **Functions** logs for `[contact-email]` |
+| Verified apex but still fails | Verify **`contact.chl77.org`** in Resend, not only `chl77.org` |
 | Emails go to spam | Confirm DKIM green in Resend; add DMARC if offered |
 | `403` / validation error | `RESEND_FROM_EMAIL` domain must match verified subdomain exactly |
+| Check send attempts | [resend.com/emails](https://resend.com/emails) — failed sends show the API error |

@@ -151,7 +151,7 @@ export async function POST(request: NextRequest) {
   if (!emailResult.ok) {
     return NextResponse.json(
       { error: emailResult.message },
-      { status: emailResult.pendingDns ? 503 : 502 },
+      { status: 502 },
     );
   }
 
