@@ -70,7 +70,7 @@ export async function sendContactEmail(
     console.error("[contact-email]", fromError, { from: config.from });
     return {
       ok: false,
-      message: `Email could not be sent: the send address must use @${siteConfig.emailSendingDomain} (verified in Resend). Update RESEND_FROM_EMAIL in Vercel — e.g. Center Hill Lodge <secretary@${siteConfig.emailSendingDomain}>`,
+      message: `Email could not be sent: the send address must use @${siteConfig.emailSendingDomain} (verified in Resend). Update RESEND_FROM_EMAIL in Vercel — e.g. Center Hill Lodge <contactform@${siteConfig.emailSendingDomain}>`,
     };
   }
 

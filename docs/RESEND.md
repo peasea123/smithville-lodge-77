@@ -11,7 +11,7 @@ The contact form sends mail through [Resend](https://resend.com) after Turnstile
 | Name | Example | Notes |
 |------|---------|--------|
 | `RESEND_API_KEY` | `re_...` | From Resend → API Keys. **Server only** — never `NEXT_PUBLIC_`. |
-| `RESEND_FROM_EMAIL` | `Center Hill Lodge <secretary@contact.chl77.org>` | **From** must use `@contact.chl77.org` — not `@chl77.org`. |
+| `RESEND_FROM_EMAIL` | `Center Hill Lodge <contactform@contact.chl77.org>` | **From** must use `@contact.chl77.org` — not `@chl77.org`. No mailbox required. |
 | `CONTACT_FORM_TO_EMAIL` | `secretary@chl77.org` | Where submissions are delivered (any inbox; apex domain is fine here). |
 
 After adding or changing variables, **redeploy** on Vercel.
@@ -45,8 +45,8 @@ These do not conflict. You are adding records for the **subdomain** `contact`, n
 
 Pick one address on the verified subdomain:
 
-- `Center Hill Lodge <inquiries@contact.chl77.org>` (recommended)
-- `Center Hill Lodge <noreply@contact.chl77.org>`
+- `Center Hill Lodge <contactform@contact.chl77.org>` (in use)
+- `Center Hill Lodge <inquiries@contact.chl77.org>`
 
 `CONTACT_FORM_TO_EMAIL` can be any inbox you check (Gmail, lodge officer email, etc.).
 
