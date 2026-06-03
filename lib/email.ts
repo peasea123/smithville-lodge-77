@@ -67,11 +67,10 @@ export async function sendContactEmail(
 
   const fromError = validateFromAddress(config.from);
   if (fromError) {
-    console.error("[contact-email]", fromError);
+    console.error("[contact-email]", fromError, { from: config.from });
     return {
       ok: false,
-      message:
-        "Email delivery is misconfigured on the server. Please try again after the lodge updates its email settings.",
+      message: `Email could not be sent: the send address must use @${siteConfig.emailSendingDomain} (verified in Resend). Update RESEND_FROM_EMAIL in Vercel — e.g. Center Hill Lodge <secretary@${siteConfig.emailSendingDomain}>`,
     };
   }
 

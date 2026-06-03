@@ -11,8 +11,8 @@ The contact form sends mail through [Resend](https://resend.com) after Turnstile
 | Name | Example | Notes |
 |------|---------|--------|
 | `RESEND_API_KEY` | `re_...` | From Resend → API Keys. **Server only** — never `NEXT_PUBLIC_`. |
-| `RESEND_FROM_EMAIL` | `Center Hill Lodge <inquiries@contact.chl77.org>` | Must use `@contact.chl77.org` after that subdomain is **Verified** in Resend. |
-| `CONTACT_FORM_TO_EMAIL` | `your-inbox@gmail.com` | Where submissions are delivered (any valid email). |
+| `RESEND_FROM_EMAIL` | `Center Hill Lodge <secretary@contact.chl77.org>` | **From** must use `@contact.chl77.org` — not `@chl77.org`. |
+| `CONTACT_FORM_TO_EMAIL` | `secretary@chl77.org` | Where submissions are delivered (any inbox; apex domain is fine here). |
 
 After adding or changing variables, **redeploy** on Vercel.
 
@@ -69,7 +69,8 @@ Pick one address on the verified subdomain:
 
 | Symptom | Fix |
 |---------|-----|
-| Resend verified but form still fails | **`RESEND_FROM_EMAIL` must use `@contact.chl77.org`**, not `@chl77.org`. Example: `Center Hill Lodge <inquiries@contact.chl77.org>`. Redeploy after changing Vercel. |
+| Resend log: **Verify chl77.org or update your from domain** | `RESEND_FROM_EMAIL` is `@chl77.org` but only **`contact.chl77.org`** is verified. Change to `Center Hill Lodge <secretary@contact.chl77.org>` (or any name before `@contact.chl77.org`). `CONTACT_FORM_TO_EMAIL` can stay `secretary@chl77.org`. |
+| Form fails but nothing in Resend logs | Latest code blocks send before Resend when From is wrong — fix `RESEND_FROM_EMAIL`, redeploy, try again. |
 | “Domain verification” on form (old deploy) | Redeploy latest code; check Vercel **Functions** logs for `[contact-email]` |
 | Verified apex but still fails | Verify **`contact.chl77.org`** in Resend, not only `chl77.org` |
 | Emails go to spam | Confirm DKIM green in Resend; add DMARC if offered |
