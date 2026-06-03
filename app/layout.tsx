@@ -45,7 +45,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  // Favicon: app/icon.png and app/apple-icon.png (Next.js file convention)
 };
 
 export default function RootLayout({
