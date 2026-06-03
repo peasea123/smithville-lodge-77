@@ -18,6 +18,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.shortName}`,
@@ -26,16 +27,23 @@ export const metadata: Metadata = {
   keywords: [
     "Freemasonry",
     "Masonic lodge",
+    "Center Hill Lodge",
     "Smithville Tennessee",
     "charity",
     "fraternity",
     "DeKalb County",
+    "chl77",
   ],
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     type: "website",
     locale: "en_US",
+    url: siteConfig.url,
+    siteName: siteConfig.shortName,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

@@ -5,7 +5,9 @@ export const siteConfig = {
   location: "Smithville, Tennessee",
   description:
     "Center Hill Lodge No. 77 is a local Masonic lodge committed to charity, fellowship, moral growth, and service to our community.",
-  url: "https://smithville-lodge-77.vercel.app",
+  url: "https://www.chl77.org",
+  /** Production hostnames (for Turnstile, DNS, etc.) */
+  domains: ["chl77.org", "www.chl77.org"] as const,
   contact: {
     address: "101 W Market",
     city: "Smithville, TN 37166",

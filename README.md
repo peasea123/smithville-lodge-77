@@ -71,7 +71,7 @@ Then import the repo at [vercel.com/new](https://vercel.com/new). Pushes to `mai
 3. Commit and push to GitHub.
 4. Open a pull request for review before merging to the main branch.
 
-Update `lib/site.ts` → `url` with your production domain when live.
+Production site: **https://www.chl77.org** (also **https://chl77.org**). Canonical URL is set in `lib/site.ts`.
 
 ## Before launch checklist
 

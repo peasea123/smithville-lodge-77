@@ -110,12 +110,14 @@ vercel --prod
 
 ---
 
-## Custom domain (later)
+## Custom domain
 
-1. In Vercel: Project → **Settings** → **Domains**
-2. Add your domain (e.g. `smithvillelodge77.org`)
-3. Add the DNS records Vercel shows at your registrar
-4. Update `lib/site.ts` → `url` with the live domain
+Production: **https://www.chl77.org** and **https://chl77.org**
+
+1. In Vercel: Project → **Settings** → **Domains** — add `chl77.org` and `www.chl77.org`
+2. Add the DNS records Vercel shows at your registrar
+3. Set **www** as primary redirect (or apex → www) per your preference
+4. `lib/site.ts` → `url` is the canonical site URL (`https://www.chl77.org`)
 
 ---
 
@@ -127,7 +129,7 @@ The contact form requires **Cloudflare Turnstile** keys. Without them, the form 
 
 1. Sign in at [Cloudflare Dashboard → Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile)
 2. **Add widget** → choose **Managed** (recommended)
-3. **Domains:** add your production host(s), e.g. `smithville-lodge-77.vercel.app` and any custom domain. For local dev, add `localhost`.
+3. **Domains:** add `chl77.org`, `www.chl77.org`, and `localhost` (for local dev). Optionally keep `smithville-lodge-77.vercel.app` for preview deploys.
 4. Copy the **Site key** and **Secret key**
 
 ### 2. Add to Vercel
@@ -183,4 +185,4 @@ When you add email delivery (Resend, etc.), add those secrets in the same Vercel
 |---------|-----------------|
 | GitHub repo | `https://github.com/YOUR_USERNAME/smithville-lodge-77` |
 | Vercel preview | `https://smithville-lodge-77-*.vercel.app` |
-| Production | Custom domain or Vercel production URL |
+| Production | https://www.chl77.org · https://chl77.org |
