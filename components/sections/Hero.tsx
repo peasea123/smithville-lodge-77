@@ -8,6 +8,7 @@ type HeroProps = {
   subheadline: string;
   imageSrc?: string;
   imageAlt?: string;
+  showLogo?: boolean;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };
@@ -17,6 +18,7 @@ export function Hero({
   subheadline,
   imageSrc = images.hero.home,
   imageAlt = "Center Hill Lodge — welcoming Masonic fraternity in Tennessee",
+  showLogo = false,
   primaryCta,
   secondaryCta,
 }: HeroProps) {
@@ -36,9 +38,23 @@ export function Hero({
           <p className="mb-4 text-sm font-semibold tracking-[0.2em] text-gold uppercase">
             Smithville, Tennessee
           </p>
-          <h1 className="font-serif text-4xl font-semibold leading-tight text-ivory sm:text-5xl lg:text-6xl">
-            {headline}
-          </h1>
+          <div className="flex items-center gap-4 sm:gap-6">
+            {showLogo && (
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-sm border border-gold/40 bg-white/95 shadow-sm sm:h-20 sm:w-20">
+                <Image
+                  src={images.brand.logo}
+                  alt=""
+                  fill
+                  className="object-contain p-1"
+                  sizes="(max-width: 640px) 64px, 80px"
+                  priority
+                />
+              </div>
+            )}
+            <h1 className="font-serif text-4xl font-semibold leading-tight text-ivory sm:text-5xl lg:text-6xl">
+              {headline}
+            </h1>
+          </div>
           <p className="mt-6 text-lg leading-relaxed text-ivory/90 sm:text-xl">
             {subheadline}
           </p>

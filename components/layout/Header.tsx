@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { images } from "@/lib/images";
 import { siteConfig } from "@/lib/site";
-import { MasonicAccent } from "./MasonicAccent";
 
 export function Header() {
   const pathname = usePathname();
@@ -14,8 +15,15 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-ivory-dark/80 bg-ivory/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-sm border border-gold/40 bg-navy text-gold">
-            <MasonicAccent className="h-7 w-7 text-gold" />
+          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-sm border border-gold/40 bg-white">
+            <Image
+              src={images.brand.logo}
+              alt=""
+              fill
+              className="object-contain p-0.5"
+              sizes="48px"
+              priority
+            />
           </div>
           <div className="leading-tight">
             <span className="font-serif text-lg font-semibold text-navy">

@@ -2,6 +2,10 @@
  * Site image paths. Update as new photos are added to public/images/.
  */
 export const images = {
+  brand: {
+    logo: "/images/chl77logo.png",
+    favicon: "/images/chl77favicon.png",
+  },
   hero: {
     home: "/images/hero-home.png",
     about: "/images/about-lodge.png",
