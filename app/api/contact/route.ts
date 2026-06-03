@@ -127,5 +127,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  // Captcha and validation pass here. Delivery/storage integration can be added
+  // later without changing the anti-bot gate in front of this endpoint.
   return NextResponse.json({ ok: true });
 }

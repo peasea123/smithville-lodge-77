@@ -76,8 +76,9 @@ export function ContactForm({
           Thank you for your message
         </p>
         <p className="mt-2 text-sm text-stone">
-          Your inquiry has been received. A lodge officer will respond when one is
-          available.
+          This form is now protected by captcha, but message delivery is still being
+          finalized. Please use the contact details on this page for urgent
+          inquiries.
         </p>
       </div>
     );
