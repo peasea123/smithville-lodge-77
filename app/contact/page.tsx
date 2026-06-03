@@ -54,36 +54,11 @@ export default function ContactPage() {
                 </dt>
                 <dd className="mt-2 text-stone">{contact.meetingSchedule}</dd>
               </div>
-              <div>
-                <dt className="text-xs font-semibold tracking-widest text-gold uppercase">
-                  Email
-                </dt>
-                <dd className="mt-2">
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="text-navy underline decoration-gold/50 hover:decoration-gold"
-                  >
-                    {contact.email}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold tracking-widest text-gold uppercase">
-                  Phone
-                </dt>
-                <dd className="mt-2">
-                  <a
-                    href={`tel:${contact.phone.replace(/\D/g, "")}`}
-                    className="text-navy underline decoration-gold/50 hover:decoration-gold"
-                  >
-                    {contact.phone}
-                  </a>
-                </dd>
-              </div>
             </dl>
             <p className="mt-8 text-sm text-stone">
-              Visitors who are not Masons should contact the lodge in advance.
-              Ceremonial portions of meetings are not open to the public.
+              Visitors who are not Masons should use the contact form below
+              before attending. Ceremonial portions of meetings are not open to
+              the public.
             </p>
           </div>
 
