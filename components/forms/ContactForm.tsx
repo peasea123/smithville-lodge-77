@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { TurnstileField } from "@/components/forms/TurnstileField";
 
 type ContactFormProps = {
@@ -15,8 +15,15 @@ export function ContactForm({
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const successRef = useRef<HTMLDivElement>(null);
   const captchaSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
   const captchaConfigured = Boolean(captchaSiteKey);
+
+  useEffect(() => {
+    if (!submitted || !successRef.current) return;
+    successRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    successRef.current.focus({ preventScroll: true });
+  }, [submitted]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -69,8 +76,11 @@ export function ContactForm({
   if (submitted) {
     return (
       <div
-        className="rounded-sm border border-gold/40 bg-navy/5 px-6 py-8 text-center"
+        ref={successRef}
+        tabIndex={-1}
+        className="rounded-sm border border-gold/40 bg-navy/5 px-6 py-8 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
         role="status"
+        aria-live="polite"
       >
         <p className="font-serif text-lg font-semibold text-navy">
           Thank you for your message
