@@ -29,6 +29,6 @@ export const images = {
     dining: "/images/gallery-dining.png",
     charity: "/images/gallery-charity.png",
   },
-  cornerstone1937: "/images/cornerstone-1937.PNG",
+  cornerstone1937: "/images/cornerstone-1937.png",
   abstractBackground: "/images/abstract_background.png",
 } as const;
