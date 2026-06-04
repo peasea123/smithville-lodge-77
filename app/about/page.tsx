@@ -64,7 +64,8 @@ export default function AboutPage() {
             <p>
               The lodge traces its origins to the early Masonic tradition in
               DeKalb County. To learn more about our history — including the
-              1937 Liberty Lodge cornerstone and the men who built this lodge —
+              1937 Liberty Lodge commemorative building marker and the men who
+              built this lodge —
               visit our{" "}
               <Link href="/history" className="font-medium text-navy underline decoration-gold/60">
                 History page
