@@ -20,6 +20,7 @@ export const siteConfig = {
   nav: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
+    { label: "History", href: "/history" },
     { label: "Freemasonry", href: "/freemasonry" },
     { label: "Charity", href: "/charity" },
     { label: "Fellowship", href: "/fellowship" },
