@@ -88,9 +88,9 @@ export default function HistoryPage() {
               <p>
                 Set into the lodge building is one of the most
                 important visible links to the history of Center Hill Lodge
-                No.&nbsp;77. Rather than serving as a cornerstone, this marble
-                piece is better understood as a commemorative building marker.
-                It identifies the building as Liberty Lodge No.&nbsp;77,
+                No.&nbsp;77. This marble piece is best understood as a
+                commemorative building marker. It identifies the building as
+                Liberty Lodge No.&nbsp;77,
                 F.&nbsp;&amp;&nbsp;A.M., with the date 1831 carved into the left
                 side and 1937 carved into the right side. The date 1831 marks
                 the early history of Liberty Lodge No.&nbsp;77, while the 1937
