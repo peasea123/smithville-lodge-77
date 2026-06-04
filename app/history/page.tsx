@@ -62,43 +62,46 @@ export default function HistoryPage() {
       <ContentSection variant="alt">
         <div className="mx-auto max-w-5xl">
           <SectionHeading
-            title="The 1937 Liberty Lodge Cornerstone"
+            title="The 1937 Liberty Lodge Commemorative Building Marker"
             subtitle="A lasting record of brotherhood, sacrifice, and community commitment."
           />
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[auto_1fr] lg:items-start">
-            {/* Cornerstone image */}
+            {/* Building marker image */}
             <div className="mx-auto w-full max-w-xs shrink-0 lg:mx-0 lg:w-56 xl:w-64">
               <div className="overflow-hidden rounded-sm border border-gold/30 bg-white shadow-sm">
                 <Image
                   src={images.cornerstone1937}
-                  alt="1937 Liberty Lodge No. 77 cornerstone"
+                  alt="1937 Liberty Lodge No. 77 commemorative building marker"
                   width={256}
                   height={320}
                   className="w-full object-cover"
                 />
               </div>
               <p className="mt-2 text-center text-xs italic text-stone/70">
-                The 1937 Liberty Lodge No.&nbsp;77 cornerstone
+                The 1937 Liberty Lodge No.&nbsp;77 commemorative building marker
               </p>
             </div>
 
             {/* Main text */}
             <div className="space-y-5 leading-relaxed text-stone">
               <p>
-                Set into the corner of the lodge building is one of the most
+                Set into the lodge building is one of the most
                 important visible links to the history of Center Hill Lodge
-                No.&nbsp;77. The stone identifies the building as Liberty Lodge
-                No.&nbsp;77, F.&nbsp;&amp;&nbsp;A.M., with the date 1831 carved
-                into the left side and 1937 carved into the right side. The date
-                1831 marks the early history of Liberty Lodge No.&nbsp;77, while
-                the 1937 date marks the construction or dedication of this lodge
+                No.&nbsp;77. Rather than serving as a cornerstone, this marble
+                piece is better understood as a commemorative building marker.
+                It identifies the building as Liberty Lodge No.&nbsp;77,
+                F.&nbsp;&amp;&nbsp;A.M., with the date 1831 carved into the left
+                side and 1937 carved into the right side. The date 1831 marks
+                the early history of Liberty Lodge No.&nbsp;77, while the 1937
+                date marks the construction or dedication of this lodge
                 building.
               </p>
               <p>
                 Although the lodge is now known as Center Hill Lodge No.&nbsp;77,
-                the cornerstone preserves the older name, Liberty Lodge
-                No.&nbsp;77. This stone is a reminder that the present lodge
+                the commemorative building marker preserves the older name,
+                Liberty Lodge No.&nbsp;77. This stone is a reminder that the
+                present lodge
                 continues a much older Masonic tradition in Smithville and
                 DeKalb County.
               </p>
@@ -189,18 +192,18 @@ export default function HistoryPage() {
         <div className="mx-auto max-w-3xl space-y-5 leading-relaxed text-ivory/90">
           <SectionHeading
             title="A Foundation for Today"
-            subtitle="The cornerstone endures as a public record of brotherhood and community commitment."
+            subtitle="The building marker endures as a public record of brotherhood and community commitment."
             centered
             light
           />
           <div className="mt-6 space-y-5">
             <p>
-              The 1937 cornerstone is more than a construction marker. It is a
-              public record of brotherhood, sacrifice, and community commitment.
-              It connects today&apos;s Center Hill Lodge No.&nbsp;77 with the
-              earlier Liberty Lodge No.&nbsp;77 and with the men who helped
-              preserve Masonry in Smithville through the difficult years of the
-              Great Depression.
+              The 1937 commemorative building marker is more than a marble
+              inscription. It is a public record of brotherhood, sacrifice, and
+              community commitment. It connects today&apos;s Center Hill Lodge
+              No.&nbsp;77 with the earlier Liberty Lodge No.&nbsp;77 and with
+              the men who helped preserve Masonry in Smithville through the
+              difficult years of the Great Depression.
             </p>
             <p>
               Today, this stone remains part of the building and part of the
