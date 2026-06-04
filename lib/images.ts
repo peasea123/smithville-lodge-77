@@ -9,6 +9,7 @@ export const images = {
   hero: {
     home: "/images/hero-home.png",
     about: "/images/about-lodge.png",
+    history: "/images/about-lodge.png",
     freemasonry: "/images/freemasonry.png",
     fellowship: "/images/fellowship.png",
     membership: "/images/membership.png",
@@ -28,5 +29,6 @@ export const images = {
     dining: "/images/gallery-dining.png",
     charity: "/images/gallery-charity.png",
   },
+  cornerstone1937: "/images/cornerstone-1937.jpg",
   abstractBackground: "/images/abstract_background.png",
 } as const;

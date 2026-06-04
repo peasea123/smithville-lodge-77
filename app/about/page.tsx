@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContentSection } from "@/components/sections/ContentSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -60,10 +61,15 @@ export default function AboutPage() {
               instruction. We welcome the community to know who we are and what we stand
               for.
             </p>
-            <p className="text-sm italic text-stone/80">
-              Historical details about the lodge charter and past masters may be added
-              here when verified — this page uses placeholder framing until lodge
-              records are provided.
+            <p>
+              The lodge traces its origins to the early Masonic tradition in
+              DeKalb County. To learn more about our history — including the
+              1937 Liberty Lodge cornerstone and the men who built this lodge —
+              visit our{" "}
+              <Link href="/history" className="font-medium text-navy underline decoration-gold/60">
+                History page
+              </Link>
+              .
             </p>
           </div>
         </div>
